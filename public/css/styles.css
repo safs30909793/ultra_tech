@@ -1,0 +1,331 @@
+/* UltraTech Global Solution LTD - Custom Styles */
+
+:root {
+  /* Design Brief Color Tokens */
+  --background: #ffffff;
+  --foreground: #374151;
+  --card: #f0fdf4;
+  --card-foreground: #374151;
+  --primary: #15803d;
+  --primary-foreground: #ffffff;
+  --secondary: #84cc16;
+  --secondary-foreground: #ffffff;
+  --muted: #f0fdf4;
+  --muted-foreground: #374151;
+  --accent: #84cc16;
+  --accent-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #f0fdf4;
+  --radius: 0.5rem;
+}
+
+/* Typography */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+/* Custom Button Styles */
+.btn-primary-custom {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #166534;
+  border-color: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+}
+
+.btn-accent-custom {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.btn-accent-custom:hover {
+  background-color: #65a30d;
+  border-color: #65a30d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
+}
+
+/* Header Styles */
+.navbar-custom {
+  background-color: var(--background);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary) !important;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--foreground) !important;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(21, 128, 61, 0.9), rgba(132, 204, 22, 0.8)),
+    url("/placeholder.svg?height=600&width=1200") center / cover;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Course Cards */
+.course-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.course-card .course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+.course-badge {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--muted);
+  padding: 5rem 0;
+}
+
+.about-stats {
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+}
+
+.stat-label {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+/* Testimonials */
+.testimonial-card {
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 100%;
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--primary);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: var(--muted-foreground);
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Footer */
+.footer-custom {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 3rem 0 1rem;
+}
+
+.footer-custom h5 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.footer-custom a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-custom a:hover {
+  color: var(--accent);
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Assessment Section */
+.assessment-section {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.assessment-section h2 {
+  margin-bottom: 1rem;
+}
+
+.assessment-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .course-card {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Loading Animation */
+.loading {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner-border-custom {
+  color: var(--primary);
+}
+
+/* Form Styles */
+.form-control-custom {
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(21, 128, 61, 0.25);
+  background-color: var(--background);
+}
