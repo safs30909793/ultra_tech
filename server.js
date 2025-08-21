@@ -1,35 +1,14 @@
 const express = require("express")
 const mysql = require("mysql")
-const bcrypt = require("bcrypt")
 const session = require("express-session")
 const multer = require("multer")
 const path = require("path")
 const fs = require("fs")
-require("dotenv").config()
-
+const db= require('./mysql')
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// MySQL database connection configuration
-const dbConfig = {
-  host: process.env.DB_HOST || "mysql-shamsu557.alwaysdata.net",
-  port: process.env.DB_PORT || 3306,
-  user: process.env.DB_USER || "shamsu557",
-  password: process.env.DB_PASSWORD || "@Shamsu1440",
-  database: process.env.DB_NAME || "shamsu557_maula_database",
-}
 
-// Create MySQL connection
-const db = mysql.createConnection(dbConfig)
-
-// Connect to MySQL database
-db.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MySQL database:", err)
-    return
-  }
-  console.log("Connected to MySQL database")
-})
 
 // Middleware
 app.use(express.json())
