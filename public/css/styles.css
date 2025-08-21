@@ -170,8 +170,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+
+  /* New for equal sizes */
+  display: flex;
+  flex-direction: column;
+  height: 100%;         /* make card stretch in its column */
+  min-height: 290px;    /* ensures consistent height */
 }
 
+/* Top accent bar */
 .course-card::before {
   content: "";
   position: absolute;
@@ -209,6 +216,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 1rem;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+/* Ensure equal height for all cards in a row */
+#coursesContainer .col-md-4 {
+  display: flex;
+}
+
+#coursesContainer .course-card {
+  flex: 1;
 }
 
 /* About Section */
