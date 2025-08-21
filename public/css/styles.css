@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Hero section*/
 .hero-section {
   background: linear-gradient(135deg, rgba(2, 32, 179, 0.9), rgba(9, 19, 15, 0.8)),
-    url("/images/hero.jfif") center / cover no-repeat;
+    url("hero.jfif") center / cover no-repeat;
   min-height: 60vh;
   display: flex;
   align-items: center;
