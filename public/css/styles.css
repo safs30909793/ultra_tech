@@ -485,3 +485,29 @@ h1, h2, h3, h4, h5, h6 {
 .spinner-border {
   color: var(--primary);
 }
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.back-to-top i {
+  vertical-align: middle;
+}
