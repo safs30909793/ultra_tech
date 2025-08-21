@@ -1,53 +1,84 @@
-// UltraTech Global Solution LTD - Main JavaScript
-
 document.addEventListener("DOMContentLoaded", () => {
   // Load courses on page load
-  loadCourses()
+  loadCourses();
+
+  // Mobile navbar toggle
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector("#navbarNav");
+  const togglerIcon = document.querySelector(".navbar-toggler-icon");
+  const togglerCloseIcon = document.querySelector(".navbar-toggler-icon-close");
+
+  if (navbarToggler && navbarCollapse) {
+    // Toggle navbar and icons on hamburger click
+    navbarToggler.addEventListener("click", () => {
+      navbarCollapse.classList.toggle("show");
+      // Toggle visibility of hamburger and close icons
+      if (navbarCollapse.classList.contains("show")) {
+        togglerIcon.style.display = "none";
+        togglerCloseIcon.style.display = "block";
+      } else {
+        togglerIcon.style.display = "block";
+        togglerCloseIcon.style.display = "none";
+      }
+    });
+
+    // Close navbar when clicking any nav link, dropdown item, or Enroll Now button, but not on dropdown toggle
+    document.querySelectorAll(".navbar-nav .nav-link, .dropdown-menu .dropdown-item, .navbar .btn-primary").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        // Skip collapsing if the clicked element is the dropdown toggle
+        if (window.innerWidth <= 991 && !e.target.classList.contains("dropdown-toggle")) {
+          navbarCollapse.classList.remove("show");
+          togglerIcon.style.display = "block";
+          togglerCloseIcon.style.display = "none";
+        }
+      });
+    });
+  }
 
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-      const target = document.querySelector(this.getAttribute("href"))
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
           block: "start",
-        })
+        });
       }
-    })
-  })
+    });
+  });
 
   // Navbar background change on scroll
   window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar-custom")
+    const navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
-      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)"
-      navbar.style.backdropFilter = "blur(10px)"
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+      navbar.style.backdropFilter = "blur(10px)";
     } else {
-      navbar.style.backgroundColor = "var(--background)"
-      navbar.style.backdropFilter = "none"
+      navbar.style.backgroundColor = "var(--background)";
+      navbar.style.backdropFilter = "none";
     }
-  })
-})
+  });
+});
 
 // Load courses from API
 async function loadCourses() {
-  const coursesContainer = document.getElementById("coursesContainer")
-  const loading = document.getElementById("coursesLoading")
+  const coursesContainer = document.getElementById("coursesContainer");
+  const loading = document.getElementById("coursesLoading");
 
   try {
-    loading.style.display = "block"
+    loading.style.display = "block";
 
-    const response = await fetch("/api/courses")
-    const courses = await response.json()
+    const response = await fetch("/api/courses");
+    const courses = await response.json();
 
-    loading.style.display = "none"
+    loading.style.display = "none";
 
     if (courses.length === 0) {
       coursesContainer.innerHTML =
-        '<div class="col-12 text-center"><p class="text-muted">No courses available at the moment.</p></div>'
-      return
+        '<div class="col-12 text-center"><p class="text-muted">No courses available at the moment.</p></div>';
+      return;
     }
 
     coursesContainer.innerHTML = courses
@@ -74,14 +105,14 @@ async function loadCourses() {
                     </div>
                 </div>
             </div>
-        `,
+        `
       )
-      .join("")
+      .join("");
   } catch (error) {
-    console.error("Error loading courses:", error)
-    loading.style.display = "none"
+    console.error("Error loading courses:", error);
+    loading.style.display = "none";
     coursesContainer.innerHTML =
-      '<div class="col-12 text-center"><p class="text-danger">Error loading courses. Please try again later.</p></div>'
+      '<div class="col-12 text-center"><p class="text-danger">Error loading courses. Please try again later.</p></div>';
   }
 }
 
@@ -92,45 +123,41 @@ function formatSchedule(schedule) {
     morning: "Morning Classes",
     evening: "Evening Classes",
     "morning,evening": "Morning & Evening",
-  }
-  return scheduleMap[schedule] || schedule
+  };
+  return scheduleMap[schedule] || schedule;
 }
 
 // Show course details modal
 function showCourseDetails(courseId) {
-  // This will be implemented when we create the course details modal
-  alert(`Course details for course ID: ${courseId}. This feature will be implemented in the next phase.`)
+  alert(`Course details for course ID: ${courseId}. This feature will be implemented in the next phase.`);
 }
 
 // Payment integration helper
 function initializePayment(amount, email, reference, callback) {
-  // Paystack integration will be implemented here
-  console.log("Payment initialization:", { amount, email, reference })
-
-  // For now, show a placeholder
-  alert("Payment integration will be implemented with Paystack in the next phase.")
+  console.log("Payment initialization:", { amount, email, reference });
+  alert("Payment integration will be implemented with Paystack in the next phase.");
 }
 
 // Form validation helper
 function validateForm(formElement) {
-  const inputs = formElement.querySelectorAll("input[required], select[required], textarea[required]")
-  let isValid = true
+  const inputs = formElement.querySelectorAll("input[required], select[required], textarea[required]");
+  let isValid = true;
 
   inputs.forEach((input) => {
     if (!input.value.trim()) {
-      input.classList.add("is-invalid")
-      isValid = false
+      input.classList.add("is-invalid");
+      isValid = false;
     } else {
-      input.classList.remove("is-invalid")
+      input.classList.remove("is-invalid");
     }
-  })
+  });
 
-  return isValid
+  return isValid;
 }
 
 // Generate application/reference numbers
 function generateReference(prefix = "REF") {
-  return prefix + Date.now() + Math.floor(Math.random() * 1000)
+  return prefix + Date.now() + Math.floor(Math.random() * 1000);
 }
 
 // Format currency (Nigerian Naira)
@@ -138,36 +165,35 @@ function formatCurrency(amount) {
   return new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-  }).format(amount)
+  }).format(amount);
 }
 
 // Show success/error messages
 function showMessage(message, type = "success") {
-  const alertDiv = document.createElement("div")
-  alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`
-  alertDiv.style.cssText = "top: 100px; right: 20px; z-index: 9999; min-width: 300px;"
+  const alertDiv = document.createElement("div");
+  alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+  alertDiv.style.cssText = "top: 100px; right: 20px; z-index: 9999; min-width: 300px;";
   alertDiv.innerHTML = `
         ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `
+    `;
 
-  document.body.appendChild(alertDiv)
+  document.body.appendChild(alertDiv);
 
-  // Auto remove after 5 seconds
   setTimeout(() => {
     if (alertDiv.parentNode) {
-      alertDiv.remove()
+      alertDiv.remove();
     }
-  }, 5000)
+  }, 5000);
 }
 
 // Loading state helper
 function setLoadingState(element, isLoading, originalText = "") {
   if (isLoading) {
-    element.disabled = true
-    element.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Loading...'
+    element.disabled = true;
+    element.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Loading...';
   } else {
-    element.disabled = false
-    element.innerHTML = originalText
+    element.disabled = false;
+    element.innerHTML = originalText;
   }
 }
