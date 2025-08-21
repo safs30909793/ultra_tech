@@ -127,9 +127,65 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
 }
 
+.navbar-toggler-icon-close i {
+  color: var(--primary-foreground);
+  font-size: 1.5em;
+  vertical-align: middle;
+}
 
 .brand-text {
   font-size: 1.25rem; /* default (desktop/tablet) */
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse.show {
+    background-color: var(--background);
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-nav {
+    padding-top: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  .dropdown-menu {
+    background-color: var(--background);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar .btn-primary {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-collapse.show .nav-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar-nav .nav-item:nth-child(1) { transition-delay: 0.1s; }
+  .navbar-nav .nav-item:nth-child(2) { transition-delay: 0.2s; }
+  .navbar-nav .nav-item:nth-child(3) { transition-delay: 0.3s; }
+  .navbar-nav .nav-item:nth-child(4) { transition-delay: 0.4s; }
+  .navbar-nav .nav-item:nth-child(5) { transition-delay: 0.5s; }
+  .navbar-nav .nav-item:nth-child(6) { transition-delay: 0.6s; }
 }
 
 @media (max-width: 576px) {
@@ -137,7 +193,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem; /* smaller on mobile */
   }
 }
-
 /*Hero section*/
 .hero-section {
   background: linear-gradient(135deg, rgba(2, 32, 179, 0.9), rgba(9, 19, 15, 0.8)),
