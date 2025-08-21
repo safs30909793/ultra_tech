@@ -1,226 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UltraTech Global Solution LTD - Empowering Your Future with Technology</title>
-    <meta name="description" content="Leading training school in Nigeria offering Web Development, AI, AutoCAD, Solar Installation, and more. Join thousands of successful graduates.">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraTech Global Solution LTD - Empowering Your Future with Technology</title>
+  <meta name="description" content="Leading training school in Nigeria offering Web Development, AI, AutoCAD, Solar Installation, and more. Join thousands of successful graduates.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-graduation-cap me-2"></i>
-                UltraTech Global Solution
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#assessments">Assessments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Login
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/student/login">Student Login</a></li>
-                            <li><a class="dropdown-item" href="/staff/login">Staff Login</a></li>
-                            <li><a class="dropdown-item" href="/admin/login">Admin Login</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <a href="/student/apply" class="btn btn-accent-custom ms-3">Enroll Now</a>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold brand-text" href="/">
+  <i class="fas fa-graduation-cap me-2"></i> UltraTech Global Solution
+</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon-close"><i class="fas fa-times"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#assessments">Assessments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/student/login">Student Login</a></li>
+              <li><a class="dropdown-item" href="/staff/login">Staff Login</a></li>
+              <li><a class="dropdown-item" href="/admin/login">Admin Login</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="/student/apply" class="btn btn-primary ms-3">Enroll Now</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Empower Your Future with Cutting-Edge Skills</h1>
-                <p>Join our expert-led courses in Web Development, AI, AutoCAD, Solar Installation, and more. Transform your career with hands-on training from industry professionals.</p>
-                <div class="hero-buttons">
-                    <a href="#courses" class="btn btn-primary-custom btn-lg me-3">Explore Courses</a>
-                    <a href="/student/apply" class="btn btn-accent-custom btn-lg">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="hero-section text-center text-light py-5 mt-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Empower Your Future with Cutting-Edge Skills</h1>
+      <p class="lead">Join our expert-led courses in Web Development, AI, AutoCAD, Solar Installation, and more. Transform your career with hands-on training from industry professionals.</p>
+      <div class="mt-4">
+        <a href="#courses" class="btn btn-primary btn-lg me-2">Explore Courses</a>
+        <a href="/student/apply" class="btn btn-outline-light btn-lg">Apply Now</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Courses Section -->
-    <section id="courses" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">Our Training Programs</h2>
-                <p class="lead text-muted">Choose from our comprehensive range of industry-relevant courses designed to boost your career prospects.</p>
-            </div>
-            
-            <div class="loading" id="coursesLoading">
-                <div class="spinner-border spinner-border-custom" role="status">
-                    <span class="visually-hidden">Loading courses...</span>
-                </div>
-                <p class="mt-2">Loading courses...</p>
-            </div>
-            
-            <div class="row" id="coursesContainer">
-                <!-- Courses will be loaded dynamically -->
-            </div>
+  <section id="courses" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">Our Training Programs</h2>
+      <p class="text-muted mb-5">Choose from our comprehensive range of industry-relevant courses designed to boost your career prospects.</p>
+      <div id="coursesLoading" class="mb-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-    </section>
+        <p class="mt-2">Loading courses...</p>
+      </div>
+      <div class="row" id="coursesContainer"></div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">About UltraTech Global Solution LTD</h2>
-                    <p class="lead mb-4">We are a leading training institution dedicated to empowering individuals with cutting-edge technical skills. Our mission is to bridge the gap between traditional education and industry demands.</p>
-                    <p class="mb-4">Located in Gwammaja Housing Estate, opposite Orthopedic Hospital, Dala, we offer comprehensive training programs that combine theoretical knowledge with practical, hands-on experience.</p>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="about-stats">
-                                <span class="stat-number">500+</span>
-                                <span class="stat-label">Graduates</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="about-stats">
-                                <span class="stat-number">9</span>
-                                <span class="stat-label">Programs</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="/placeholder.svg?height=400&width=600" 
-                         alt="UltraTech Training Facility" class="img-fluid rounded shadow">
-                </div>
-            </div>
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">About UltraTech Global Solution LTD</h2>
+          <p class="lead">We are a leading training institution dedicated to empowering individuals with cutting-edge technical skills.</p>
+          <p>Located in Gwammaja Housing Estate, opposite Orthopedic Hospital, Dala, we offer training programs that blend theoretical knowledge with practical experience.</p>
+          <div class="row text-center">
+          </div>
         </div>
-    </section>
-
-    <!-- Assessment Section -->
-    <section id="assessments" class="assessment-section">
-        <div class="container">
-            <h2 class="display-5 fw-bold">Online Assessments</h2>
-            <p>Test your knowledge and track your progress with our comprehensive online assessment system.</p>
-            <a href="/student/login" class="btn btn-light btn-lg">
-                <i class="fas fa-clipboard-check me-2"></i>
-                Access Assessments
-            </a>
+        <div class="col-lg-6">
+          <img src="./images/training facility.jpg" alt="Training Facility" class="img-fluid rounded shadow">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold mb-3">What Our Students Say</h2>
-                <p class="lead text-muted">Hear from our successful graduates who have transformed their careers.</p>
+  <section id="assessments" class="py-5 text-center assessment-section">
+    <div class="container">
+      <h2 class="fw-bold">Online Assessments</h2>
+      <p class="mb-4">Test your knowledge and track your progress with our online assessment system.</p>
+      <a href="/student/login" class="btn btn-outline-light btn-lg text-light">
+        <i class="fas fa-clipboard-check me-2 text-light"></i> Access Assessments
+      </a>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">What Our Students Say</h2>
+        <p class="text-muted">Hear from our successful graduates who have transformed their careers.</p>
+      </div>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card shadow-sm text-center p-4 mx-auto" style="max-width: 600px;">
+              <img src="./images/hajara.jpeg" class="testimonial-img" alt="Student">
+              <p>"The Web Development course changed my career. The instructors are knowledgeable and the hands-on approach made learning enjoyable."</p>
+              <h6 class="fw-bold">Hajara Muhammad Inuwa</h6>
+              <small class="text-muted">Web Developer at TechCorp</small>
             </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <img src="/placeholder.svg?height=80&width=80" 
-                             alt="Student" class="testimonial-avatar">
-                        <p class="testimonial-text">"The Web Development course at UltraTech completely changed my career. The instructors are knowledgeable and the hands-on approach made learning enjoyable."</p>
-                        <h6 class="testimonial-author">Adamu Ibrahim</h6>
-                        <small class="text-muted">Web Developer at TechCorp</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <img src="/placeholder.svg?height=80&width=80" 
-                             alt="Student" class="testimonial-avatar">
-                        <p class="testimonial-text">"The AI Starter Kit course opened my eyes to the possibilities of artificial intelligence. I now work as an AI consultant thanks to UltraTech."</p>
-                        <h6 class="testimonial-author">Fatima Mohammed</h6>
-                        <small class="text-muted">AI Consultant</small>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <img src="/placeholder.svg?height=80&width=80" 
-                             alt="Student" class="testimonial-avatar">
-                        <p class="testimonial-text">"The Solar Installation program gave me the skills to start my own renewable energy business. Excellent practical training!"</p>
-                        <h6 class="testimonial-author">Musa Garba</h6>
-                        <small class="text-muted">Solar Energy Entrepreneur</small>
-                    </div>
-                </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card shadow-sm text-center p-4 mx-auto" style="max-width: 600px;">
+              <img src="./images/idris.jpeg" class="testimonial-img" alt="Student">
+              <p>"The AI Starter Kit opened my eyes to AI possibilities. I now work as an AI consultant thanks to UltraTech."</p>
+              <h6 class="fw-bold">Idris Ahmed Idris</h6>
+              <small class="text-muted">AI Consultant</small>
             </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card shadow-sm text-center p-4 mx-auto" style="max-width: 600px;">
+              <img src="./images/passport.jpg" class="testimonial-img" alt="Student">
+              <p>"The Solar Installation program gave me the skills to start my own renewable energy business. Excellent practical training!"</p>
+              <h6 class="fw-bold">Abdulkadir Shamsu Sabo</h6>
+              <small class="text-muted">Solar Energy Entrepreneur</small>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <footer id="contact" class="footer-custom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>UltraTech Global Solution LTD</h5>
-                    <p>Empowering the next generation of tech professionals with industry-relevant skills and hands-on training.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Contact Information</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>Gwammaja Housing Estate, Opp. Orthopedic Hospital, Dala</p>
-                    <p><i class="fas fa-phone me-2"></i>08024606199, 08167030902</p>
-                    <p><i class="fas fa-envelope me-2"></i>info@ultratechglobalsolution.com.ng</p>
-                    <p><i class="fas fa-envelope me-2"></i>supports@ultratechglobalsolution.com.ng</p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#courses">Our Courses</a></li>
-                        <li><a href="/student/apply">Apply Now</a></li>
-                        <li><a href="/student/login">Student Portal</a></li>
-                        <li><a href="#assessments">Online Assessments</a></li>
-                        <li><a href="#about">About Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 UltraTech Global Solution LTD. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <small>Designed with ❤️ for education</small>
-                </div>
-            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators mt-4 py-5">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+<footer id="contact" class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5>UltraTech Global Solution LTD</h5>
+        <p>Empowering the next generation of tech professionals with industry-relevant skills.</p>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h5>Contact Information</h5>
+        <p><i class="fas fa-map-marker-alt me-2"></i> Gwammaja Housing Estate, Opp. Orthopedic Hospital, Dala</p>
+        <p><i class="fas fa-phone me-2"></i> 08024606199, 08167030902</p>
+        <p><i class="fas fa-envelope me-2"></i> info@ultratechglobalsolution.com.ng</p>
+        <p><i class="fas fa-envelope me-2"></i> supports@ultratechglobalsolution.com.ng</p>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#courses" class="text-light">Our Courses</a></li>
+          <li><a href="/student/apply" class="text-light">Apply Now</a></li>
+          <li><a href="/student/login" class="text-light">Student Portal</a></li>
+          <li><a href="#assessments" class="text-light">Online Assessments</a></li>
+          <li><a href="#about" class="text-light">About Us</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="/js/main.js"></script>
+    <!-- Separator -->
+    <hr class="border-light">
+
+    <!-- Copyright -->
+    <div class="text-center">
+      <p class="mb-1">&copy; 2025 UltraTech Global Solution LTD. All rights reserved.</p>
+      <small>Designed with ❤️ for education</small>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links text-center mt-3">
+      <a href="#" class="text-light"><i class="fab fa-facebook-f fa-lg"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
