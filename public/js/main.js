@@ -9,17 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const togglerCloseIcon = document.querySelector(".navbar-toggler-icon-close");
 
   if (navbarToggler && navbarCollapse) {
-    // Toggle navbar and icons on hamburger click
+    // Toggle navbar and icons on hamburger/close click
     navbarToggler.addEventListener("click", () => {
+      const isExpanded = navbarCollapse.classList.contains("show");
       navbarCollapse.classList.toggle("show");
+      // Update aria-expanded attribute manually
+      navbarToggler.setAttribute("aria-expanded", !isExpanded);
       // Toggle visibility of hamburger and close icons
-      if (navbarCollapse.classList.contains("show")) {
-        togglerIcon.style.display = "none";
-        togglerCloseIcon.style.display = "block";
-      } else {
-        togglerIcon.style.display = "block";
-        togglerCloseIcon.style.display = "none";
-      }
+      togglerIcon.style.display = isExpanded ? "block" : "none";
+      togglerCloseIcon.style.display = isExpanded ? "none" : "block";
     });
 
     // Close navbar when clicking any nav link, dropdown item, or Enroll Now button, but not on dropdown toggle
@@ -28,10 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
         // Skip collapsing if the clicked element is the dropdown toggle
         if (window.innerWidth <= 991 && !e.target.classList.contains("dropdown-toggle")) {
           navbarCollapse.classList.remove("show");
+          navbarToggler.setAttribute("aria-expanded", "false");
           togglerIcon.style.display = "block";
           togglerCloseIcon.style.display = "none";
         }
       });
+    });
+
+    // Close navbar when clicking outside on mobile
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 991 && !navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+        navbarCollapse.classList.remove("show");
+        navbarToggler.setAttribute("aria-expanded", "false");
+        togglerIcon.style.display = "block";
+        togglerCloseIcon.style.display = "none";
+      }
     });
   }
 
@@ -59,6 +68,27 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.style.backgroundColor = "var(--background)";
       navbar.style.backdropFilter = "none";
     }
+  });
+
+  // Back to Top button
+  const backToTopButton = document.createElement("button");
+  backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  backToTopButton.className = "back-to-top";
+  document.body.appendChild(backToTopButton);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 });
 
