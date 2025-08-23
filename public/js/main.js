@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Your original functions (unchanged)
+// Load courses from API
 async function loadCourses() {
   const coursesContainer = document.getElementById("coursesContainer");
   const loading = document.getElementById("coursesLoading");
@@ -145,27 +145,29 @@ async function loadCourses() {
     coursesContainer.innerHTML = courses
       .map(
         (course) => `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="course-card">
-                    <div class="course-meta">
-                        <span class="course-badge">${course.certification_type}</span>
-                        <small><i class="fas fa-clock me-1"></i>${course.duration}</small>
-                    </div>
-                    <h4>${course.name}</h4>
-                    <p class="text-muted mb-3">${course.description || "Comprehensive training program designed to equip you with industry-relevant skills."}</p>
-                    <div class="course-meta mb-3">
-                        <small><i class="fas fa-calendar me-1"></i>${formatSchedule(course.schedule)}</small>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-primary-custom" onclick="showCourseDetails(${course.id})">
-                            Learn More
-                        </button>
-                        <a href="/student/apply?course=${course.id}" class="btn btn-outline-success">
-                            Apply Now
-                        </a>
-                    </div>
+          <div class="col-6 mb-4 d-flex">
+            <div class="card shadow-sm w-100 course-card">
+              <div class="card-body d-flex flex-column">
+                <div class="course-meta">
+                  <span class="course-badge">${course.certification_type}</span>
+                  <small><i class="fas fa-clock me-1"></i>${course.duration}</small>
                 </div>
+                <h5 class="card-title">${course.name}</h5>
+                <p class="card-text text-muted mb-3">${course.description || "Comprehensive training program designed to equip you with industry-relevant skills."}</p>
+                <div class="course-meta mb-3">
+                  <small><i class="fas fa-calendar me-1"></i>${formatSchedule(course.schedule)}</small>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <button class="btn btn-primary-custom" onclick="showCourseDetails(${course.id})">
+                    Learn More
+                  </button>
+                  <a href="/student/apply?course=${course.id}" class="btn btn-outline-success">
+                    Apply Now
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         `
       )
       .join("");
@@ -177,6 +179,7 @@ async function loadCourses() {
   }
 }
 
+// Format schedule display
 function formatSchedule(schedule) {
   const scheduleMap = {
     weekend: "Weekends",
@@ -187,15 +190,18 @@ function formatSchedule(schedule) {
   return scheduleMap[schedule] || schedule;
 }
 
+// Show course details modal
 function showCourseDetails(courseId) {
   alert(`Course details for course ID: ${courseId}. This feature will be implemented in the next phase.`);
 }
 
+// Payment integration helper
 function initializePayment(amount, email, reference, callback) {
   console.log("Payment initialization:", { amount, email, reference });
   alert("Payment integration will be implemented with Paystack in the next phase.");
 }
 
+// Form validation helper
 function validateForm(formElement) {
   const inputs = formElement.querySelectorAll("input[required], select[required], textarea[required]");
   let isValid = true;
@@ -212,10 +218,12 @@ function validateForm(formElement) {
   return isValid;
 }
 
+// Generate application/reference numbers
 function generateReference(prefix = "REF") {
   return prefix + Date.now() + Math.floor(Math.random() * 1000);
 }
 
+// Format currency (Nigerian Naira)
 function formatCurrency(amount) {
   return new Intl.NumberFormat("en-NG", {
     style: "currency",
@@ -223,6 +231,7 @@ function formatCurrency(amount) {
   }).format(amount);
 }
 
+// Show success/error messages
 function showMessage(message, type = "success") {
   const alertDiv = document.createElement("div");
   alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
@@ -241,6 +250,7 @@ function showMessage(message, type = "success") {
   }, 5000);
 }
 
+// Loading state helper
 function setLoadingState(element, isLoading, originalText = "") {
   if (isLoading) {
     element.disabled = true;
