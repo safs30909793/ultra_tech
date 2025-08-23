@@ -42,6 +42,9 @@ module.exports = db;
 // CREATE TABLE IF NOT EXISTS students (
 //     id INT AUTO_INCREMENT PRIMARY KEY,
 //     application_number VARCHAR(20) UNIQUE,
+//     reference_number VARCHAR(255),
+//     amount DECIMAL(10,2),
+//     payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 //     admission_number VARCHAR(30) UNIQUE,
 //     first_name VARCHAR(50) NOT NULL,
 //     last_name VARCHAR(50) NOT NULL,
@@ -56,6 +59,7 @@ module.exports = db;
 //     security_answer VARCHAR(255),
 //     highest_qualification VARCHAR(100),
 //     profile_picture VARCHAR(255),
+//     schedule VARCHAR(50),
 //     status ENUM('Applied', 'Registered', 'Active', 'Completed', 'Suspended') DEFAULT 'Applied',
 //     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 //     FOREIGN KEY (course_id) REFERENCES courses(id)
