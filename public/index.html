@@ -13,10 +13,10 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
     <div class="container">
       <a class="navbar-brand fw-bold brand-text" href="/">
-  <i class="fas fa-graduation-cap me-2"></i> UltraTech Global Solution
-</a>
-      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-graduation-cap me-2"></i> UltraTech Global Solution
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
         <span class="navbar-toggler-icon-close"><i class="fas fa-times"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,33 +52,42 @@
   </section>
 
   <section id="courses" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-3">Our Training Programs</h2>
-    <p class="text-muted mb-5">
-      Choose from our comprehensive range of industry-relevant courses designed to boost your career prospects.
-    </p>
-    <div id="coursesLoading" class="mb-4">
-      <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">Our Training Programs</h2>
+      <p class="text-muted mb-5">
+        Choose from our comprehensive range of industry-relevant courses designed to boost your career prospects.
+      </p>
+      <div id="coursesLoading" class="mb-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Loading courses...</p>
       </div>
-      <p class="mt-2">Loading courses...</p>
-    </div>
-
-    <div class="row" id="coursesContainer">
-      <!-- Example card -->
-      <div class="col-md-4 mb-4 d-flex">
-        <div class="card shadow-sm w-100 course-card">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Web Development Frontend</h5>
-            <p class="card-text">Learn HTML, CSS, JavaScript, and modern frontend frameworks.</p>
-            <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+      <div class="row" id="coursesContainer">
+        <!-- Example card -->
+        <div class="col-6 mb-4 d-flex">
+          <div class="card shadow-sm w-100 course-card">
+            <div class="card-body d-flex flex-column">
+              <div class="course-meta">
+                <span class="course-badge">Certification</span>
+                <small><i class="fas fa-clock me-1"></i>3 Months</small>
+              </div>
+              <h5 class="card-title">Web Development Frontend</h5>
+              <p class="card-text text-muted mb-3">Learn HTML, CSS, JavaScript, and modern frontend frameworks.</p>
+              <div class="course-meta mb-3">
+                <small><i class="fas fa-calendar me-1"></i>Morning Classes</small>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <button class="btn btn-primary-custom">Learn More</button>
+                <a href="/student/apply" class="btn btn-outline-success">Apply Now</a>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- Add more cards dynamically -->
       </div>
-      <!-- Add more cards here -->
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="about" class="text-center py-5 bg-light">
     <div class="container">
@@ -91,7 +100,52 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <img src="training facility.jpg" alt="Training Facility" class="img-fluid rounded shadow">
+          <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="training facility.jpg" class="d-block w-100 rounded shadow" alt="Training Facility">
+              </div>
+              <div class="carousel-item active">
+                <img src="about.jpeg" class="d-block w-100 rounded shadow" alt="Solar Training">
+              </div>
+              <div class="carousel-item">
+                <img src="about1.jpeg" class="d-block w-100 rounded shadow" alt="Computer Training">
+              </div>
+              <div class="carousel-item">
+                <img src="about2.jpeg" class="d-block w-100 rounded shadow" alt="Programming Training">
+              </div>
+               <div class="carousel-item">
+                <img src="about8.png" class="d-block w-100 rounded shadow" alt="Programming Training">
+              </div>
+              <div class="carousel-item">
+                <img src="about3.jpeg" class="d-block w-100 rounded shadow" alt="Trainer">
+              </div>
+              <div class="carousel-item">
+                <img src="about7.jpeg" class="d-block w-100 rounded shadow" alt="Trainer">
+              </div>
+               <div class="carousel-item">
+                <img src="aboutx.png" class="d-block w-100 rounded shadow" alt="Trainer">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+              <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -156,50 +210,47 @@
       </div>
     </div>
   </section>
-<footer id="contact" class="bg-dark text-light py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <h5>UltraTech Global Solution LTD</h5>
-        <p>Empowering the next generation of tech professionals with industry-relevant skills.</p>
+
+  <footer id="contact" class="bg-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5>UltraTech Global Solution LTD</h5>
+          <p>Empowering the next generation of tech professionals with industry-relevant skills.</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Contact Information</h5>
+          <p><i class="fas fa-map-marker-alt me-2"></i> Gwammaja Housing Estate, Opp. Orthopedic Hospital, Dala</p>
+          <p><i class="fas fa-phone me-2"></i> 08024606199, 08167030902</p>
+          <p><i class="fas fa-envelope me-2"></i> info@ultratechglobalsolution.com.ng</p>
+          <p><i class="fas fa-envelope me-2"></i> supports@ultratechglobalsolution.com.ng</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#courses" class="text-light">Our Courses</a></li>
+            <li><a href="/student/apply" class="text-light">Apply Now</a></li>
+            <li><a href="/student/login" class="text-light">Student Portal</a></li>
+            <li><a href="#assessments" class="text-light">Online Assessments</a></li>
+            <li><a href="#about" class="text-light">About Us</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-lg-4 mb-4">
-        <h5>Contact Information</h5>
-        <p><i class="fas fa-map-marker-alt me-2"></i> Gwammaja Housing Estate, Opp. Orthopedic Hospital, Dala</p>
-        <p><i class="fas fa-phone me-2"></i> 08024606199, 08167030902</p>
-        <p><i class="fas fa-envelope me-2"></i> info@ultratechglobalsolution.com.ng</p>
-        <p><i class="fas fa-envelope me-2"></i> supports@ultratechglobalsolution.com.ng</p>
+      <hr class="border-light">
+      <div class="text-center">
+        <p class="mb-1">&copy; 2025 UltraTech Global Solution LTD. All rights reserved.</p>
+        <small>Designed with ❤️ for education</small>
       </div>
-      <div class="col-lg-4 mb-4">
-        <h5>Quick Links</h5>
-        <ul class="list-unstyled footer-links">
-          <li><a href="#courses" class="text-light">Our Courses</a></li>
-          <li><a href="/student/apply" class="text-light">Apply Now</a></li>
-          <li><a href="/student/login" class="text-light">Student Portal</a></li>
-          <li><a href="#assessments" class="text-light">Online Assessments</a></li>
-          <li><a href="#about" class="text-light">About Us</a></li>
-        </ul>
+      <div class="social-links text-center mt-3">
+        <a href="#" class="text-light"><i class="fab fa-facebook-f fa-lg"></i></a>
       </div>
     </div>
+  </footer>
 
-    <!-- Separator -->
-    <hr class="border-light">
+  <button class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-    <!-- Copyright -->
-    <div class="text-center">
-      <p class="mb-1">&copy; 2025 UltraTech Global Solution LTD. All rights reserved.</p>
-      <small>Designed with ❤️ for education</small>
-    </div>
-
-    <!-- Social Links -->
-    <div class="social-links text-center mt-3">
-      <a href="#" class="text-light"><i class="fab fa-facebook-f fa-lg"></i></a>
-    </div>
-  </div>
-</footer>
-<button class="back-to-top" aria-label="Back to Top">
-  <i class="fas fa-arrow-up"></i>
-</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/main.js"></script>
 </body>
